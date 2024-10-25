@@ -417,6 +417,12 @@ impl From<u8> for AirQualityIndex {
 #[cfg_attr(feature = "defmt", derive(Format))]
 pub struct ECo2(u16);
 
+impl ECo2 {
+    pub fn raw_value(&self) -> u16 {
+        self.0
+    }
+}
+
 impl From<u16> for ECo2 {
     fn from(v: u16) -> Self {
         Self(v)
